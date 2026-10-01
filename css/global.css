@@ -1,0 +1,167 @@
+/* Variables */
+:root {
+
+    --color-bg          : #F0F8FF;
+    --color-text        : #001E30;
+
+    --color-accent      : #0077BE;
+    --color-accent-dark : #005FA3;
+    --color-accent-deep : #004A80;
+
+    --font-size         : 16px;
+    --border-radius     : 1.25rem!important;
+    --margin            : 0.75rem!important;
+    --padding           : 0.75rem!important;
+}
+
+/* Fonts */
+@font-face {
+    font-family : 'Poppins';
+    src         : url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight : 400;
+    font-style  : normal;
+}
+@font-face {
+    font-family : 'Poppins';
+    src         : url('../assets/fonts/Poppins-Italic.ttf') format('truetype');
+    font-weight : 400;
+    font-style  : italic;
+}
+@font-face {
+    font-family : 'Poppins';
+    src         : url('../assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight : 700;
+    font-style  : normal;
+}
+.fc-bg {
+    color : var(--color-bg)!important;
+}
+.fc-text {
+    color : var(--color-text)!important;
+}
+.fc-accent {
+    color : var(--color-accent)!important;
+}
+.fc-accent-dark {
+    color : var(--color-accent-dark)!important;
+}
+.fc-accent-deep {
+    color : var(--color-accent-deep)!important;
+}
+.fc-white {
+    color : white!important;
+}
+.fc-black {
+    color : black!important;
+}
+.fc-muted {
+    color : #6C757D!important;
+}
+.fc-white-light {
+    color : rgba(255, 255, 255, .55)!important;
+}
+
+/* Global */
+html, body {
+    font-family                : 'Poppins', sans-serif!important;
+    font-size                  : var(--font-size);
+    font-weight                : 400!important;
+    line-height                : 1.5!important;
+    color                      : var(--color-text)!important;
+    background-color           : var(--color-bg)!important;
+    -webkit-overflow-scrolling : touch;
+    margin                     : 0;
+    padding                    : 0;
+    height                     : 100dvh;
+}
+
+.round {
+    border-radius : var(--border-radius)!important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color : var(--color-accent)!important;
+    box-shadow   : 0 0 0 .2rem var(--color-accent)!important;
+}
+
+/* Background colors */
+.bg-bg {
+    background-color : var(--color-bg)!important;
+}
+.bg-text {
+    background-color : var(--color-text)!important;
+}
+.bg-accent {
+    background-color : var(--color-accent)!important;
+}
+.bg-accent-dark {
+    background-color : var(--color-accent-dark)!important;
+}
+.bg-accent-deep {
+    background-color : var(--color-accent-deep)!important;
+}
+.bg-white {
+    background-color : white!important;
+}
+.bg-black {
+    background-color : black!important;
+}
+
+/* Buttons */
+.btn-accent-fill {
+    background-color : var(--color-accent)!important;
+    border-color     : var(--color-accent-dark)!important;
+    color            : var(--color-bg) !important;
+}
+.btn-accent-fill:hover {
+    background-color : var(--color-accent-dark)!important;
+    border-color     : var(--color-accent-deep)!important;
+    color            : var(--color-bg) !important;
+}
+.btn-accent-fill:active {
+    background-color : var(--color-accent-deep)!important;
+    border-color     : var(--color-accent-deep)!important;
+    color            : var(--color-bg) !important;
+}
+.btn-accent-fill:focus {
+    box-shadow : none;
+}
+
+.btn-accent-outline {
+    background-color : transparent!important;
+    border-color     : var(--color-accent)!important;
+    color            : var(--color-accent)!important;
+}
+.btn-accent-outline:hover {
+    background-color : transparent!important;
+    border-color     : var(--color-accent-dark)!important;
+    color            : var(--color-accent-dark) !important;
+}
+.btn-accent-outline:active {
+    background-color : var(--color-accent-deep)!important;
+    border-color     : var(--color-accent-deep)!important;
+    color            : var(--color-bg) !important;
+}
+.btn-accent-outline:focus {
+    box-shadow : none;
+}
+
+.btn-accent-outline-light {
+    background-color : transparent!important;
+    border-color     : var(--color-bg)!important;
+    color            : var(--color-bg)!important;
+}
+.btn-accent-outline-light:hover {
+    background-color : var(--color-accent-dark)!important;
+    border-color     : var(--color-accent-dark)!important;
+    color            : var(--color-bg) !important;
+}
+.btn-accent-outline-light:active {
+    background-color : var(--color-accent-deep)!important;
+    border-color     : var(--color-accent-deep)!important;
+    color            : var(--color-bg) !important;
+}
+.btn-accent-outline-light:focus {
+    box-shadow : none;
+}

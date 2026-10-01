@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang='hr'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <meta name='description' content='Profesionalni prijevodi s češkog na hrvatski i s hrvatskog na češki za poslovne, opće i književne tekstove.'>
+    <meta name='keywords' content='prijevod češki hrvatski, prijevod hrvatski češki, profesionalni prijevod češkog jezika, poslovni prijevod češki'>
+    <meta name='robots' content='index, follow'>
+    <meta property='og:locale' content='hr_HR'>
+    <meta property='og:title' content='Kroatus | Prijevod češki - hrvatski'>
+    <meta property='og:description' content='Točni i prilagođeni prijevodi između češkog i hrvatskog jezika.'>
+    <meta property='og:type' content='website'>
+
+    <title>Kroatus | Prijevod češki - hrvatski</title>
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" />
+    <link rel="icon" href="assets/favicons/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/favicons/96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/180.png" />
+    <link rel="apple-touch-icon" href="assets/favicons/192.png" />
+    
+    <link type='text/css' rel='stylesheet' href='css/bootstrap/bootstrap.min.css'/>
+    <link type='text/css' rel='stylesheet' href='css/bootstrap/bootstrap-icons.min.css'/>
+    <link type='text/css' rel='stylesheet' href='css/global.css'/>
+    <link type='text/css' rel='stylesheet' href='css/translation.css'/>
+
+    <script defer type='text/javascript' src='js/bootstrap/bootstrap.min.js'></script>
+    <script defer type='text/javascript' src='js/global.js'></script>
+    <script defer type='text/javascript' src='js/components/Navbar.js'></script>
+    <script defer type='text/javascript' src='js/components/Footer.js'></script>
+    <script defer type='text/javascript' src='js/translation.js'></script>
+
+</head>
+
+<body>
+
+    <nav-bar></nav-bar>
+
+    <main class="container" data-navbar="light">
+
+        <section class="py-5 mt-5">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6">
+                    <h1 class="fw-bold mb-4">Prijevodi: Češki <-> Hrvatski</h1>
+                    <p class="lead text-muted">Profesionalni prijevodi s češkog na hrvatski jezik i obrnuto. Osiguravamo terminološku točnost, kulturološku prilagodbu i poštivanje zadanih rokova.</p>
+                    
+                    <div class="d-flex gap-3 mt-4">
+                        <div class="p-3 bg-light round border flex-fill text-center">
+                            <span class="fw-bold d-block">Český jazyk</span>
+                            <i class="bi bi-arrow-left-right fc-accent-dark"></i>
+                            <span class="fw-bold d-block">Hrvatski jezik</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="p-5 bg-light round shadow-sm">
+                        <i class="bi bi-translate fc-accent-dark" style="font-size: 8rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-5">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 round text-center">
+                        <i class="bi bi-file-earmark-text mb-3 fc-accent-dark" style="font-size: 2rem;"></i>
+                        <h5 class="fw-bold">Opći prijevodi</h5>
+                        <p class="small text-muted">E-mailovi, dopisivanje, opći tekstovi i članci.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 round text-center">
+                        <i class="bi bi-bank mb-3 fc-accent-dark" style="font-size: 2rem;"></i>
+                        <h5 class="fw-bold">Poslovni prijevodi</h5>
+                        <p class="small text-muted">Ugovori, prezentacije, katalozi i web stranice.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 round text-center">
+                        <i class="bi bi-shield-check mb-3 fc-accent-dark" style="font-size: 2rem;"></i>
+                        <h5 class="fw-bold">Lokalizacija</h5>
+                        <p class="small text-muted">Prilagodba sadržaja duhu jezika i ciljanom tržištu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-accent-dark fc-white p-5 round mb-5 shadow-lg">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Izračun cijene prijevoda</h2>
+                    <p class="mb-4">Standardna prevoditeljska kartica iznosi <strong>1500 znakova s razmacima</strong>. Unesite broj znakova za procjenu.</p>
+                    
+                    <div class="bg-white text-dark p-4 round shadow-sm mb-4">
+                        <h5 class="fw-bold mb-3">Kalkulator kartica</h5>
+                        
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Vrsta teksta:</label>
+                            <select class="form-select mb-3" id="translationType">
+                                <option value="general">Opći tekst (pismo, blog, vijesti)</option>
+                                <option value="technical">Stručni/Poslovni tekst (ugovori, upute)</option>
+                                <option value="literary">Književni tekst</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="charCount" class="form-label small fw-bold">Broj znakova (s razmacima):</label>
+                            <input type="number" class="form-control form-control-lg" id="charCount" placeholder="npr. 3000" min="0">
+                            <div id="cardCountInfo" class="small text-muted mt-1">Broj kartica: 0</div>
+                        </div>
+                        
+                        <div class="p-3 bg-light round border-start border-4 border-accent-dark">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted">Procijenjena cijena:</span>
+                                <span class="h3 fw-bold mb-0 fc-accent-dark" id="totalTranslationPrice">0,00 €</span>
+                            </div>
+                            <p class="small text-muted mt-2 mb-0">*Konačna cijena ovisi o kompleksnosti i roku isporuke.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 text-dark">
+                    <div class="card round border-0 p-4 shadow-sm">
+                        <form>
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label fw-bold small">Vaša e-mail adresa</label>
+                                <input type="email" class="form-control" id="contactEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small">Smjer prijevoda</label>
+                                <select class="form-select">
+                                    <option>Češki → Hrvatski</option>
+                                    <option>Hrvatski → Češki</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="fileUpload" class="form-label fw-bold small">Priložite tekst (opcionalno)</label>
+                                <input type="file" class="form-control" id="fileUpload">
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-accent-fill round btn-lg">
+                                    <i class="bi bi-file-earmark-arrow-up-fill me-2"></i>Zatraži točnu ponudu
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <section-footer></section-footer>
+
+</body>
+
+</html>

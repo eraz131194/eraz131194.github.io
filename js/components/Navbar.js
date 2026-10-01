@@ -344,45 +344,56 @@ class Navbar extends HTMLElement {
 
     // When user clicks on mobile menu this closes the menu and waits to scroll down
     #handleMenuClick() {
-        
-        const offcanvasElement = document.getElementById( 'offcanvasNavbar' )
-        const bsOffcanvas      = new bootstrap.Offcanvas( offcanvasElement )
-        const navLinks         = offcanvasElement.querySelectorAll( '.nav-link' )
+    
+        const offcanvasElement = this.querySelector( '#offcanvasNavbar' )
+        if ( !offcanvasElement ) return
 
-        navLinks.forEach( _link => {
+        const bsOffcanvas = bootstrap.Offcanvas.getInstance( offcanvasElement ) || new bootstrap.Offcanvas( offcanvasElement )
+        const menuLinks   = offcanvasElement.querySelectorAll( '.nav-link, .dropdown-item' )
+
+        menuLinks.forEach( _link => {
 
             _link.addEventListener( 'click', function ( _e ) {
 
-                navLinks.forEach( l => l.classList.remove( 'active' ) )
-                this.classList.add( 'active' )
+                if ( this.classList.contains( 'dropdown-toggle' ) ) return
 
-                if ( this.classList.contains( 'dropdown-toggle' ) === true ) return
+                const href = this.getAttribute( 'href' )
+                if ( !href ) return
+
+                // Determine if this link is an in-page anchor on the current page
+                const hashIndex   = href.indexOf( '#' )
+                const hasHash     = hashIndex !== -1
+                const hash        = hasHash ? href.substring( hashIndex ) : null
+                const targetPage  = hasHash ? href.substring( 0, hashIndex ) : href
+                const currentPage = window.location.pathname.split( '/' ).pop() || 'index.html'
+
+                const isCurrentPage = targetPage === '' || targetPage === currentPage || ( currentPage === '' && targetPage === 'index.html' )
+                const targetSection = ( isCurrentPage && hash ) ? document.querySelector( hash ) : null
 
                 if ( window.innerWidth < 992 ) {
 
-                    _e.preventDefault() // Stop the instant jump
-                    
-                    const targetId      = this.getAttribute( 'href' )
-                    const targetSection = document.querySelector( targetId )
+                    if ( targetSection ) {
+                        // In-page anchor on the current page: prevent instant jump & smooth scroll after closing menu
+                        _e.preventDefault()
 
-                    // 1. Close the menu
-                    bsOffcanvas.hide()
+                        menuLinks.forEach( l => l.classList.remove( 'active' ) )
+                        this.classList.add( 'active' )
 
-                    // 2. Wait for the menu closing animation to finish before scrolling
-                    // This prevents the "bounce" effect
-                    offcanvasElement.addEventListener( 'hidden.bs.offcanvas', () => {
+                        bsOffcanvas.hide()
 
-                        if ( targetSection === undefined || targetSection === null ) return
+                        offcanvasElement.addEventListener( 'hidden.bs.offcanvas', () => {
+                            const navHeight      = document.querySelector( '.navbar' )?.offsetHeight || 56
+                            const targetPosition = targetSection.offsetTop - navHeight
 
-                        const navHeight      = document.querySelector( '.navbar' ).offsetHeight
-                        const targetPosition = targetSection.offsetTop - navHeight
-
-                        window.scrollTo({
-                            top      : targetPosition,
-                            behavior : 'smooth'
-                        } )
-
-                    }, { once : true } ) // Ensure this only runs once per click
+                            window.scrollTo( {
+                                top      : targetPosition,
+                                behavior : 'smooth'
+                            } )
+                        }, { once : true } )
+                    } else {
+                        // External page navigation (about.html, contact.html, etc.): allow natural page redirect
+                        bsOffcanvas.hide()
+                    }
                 }
             } )
         } )
